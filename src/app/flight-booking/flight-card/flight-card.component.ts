@@ -4,12 +4,12 @@ import { Component, ElementRef, EventEmitter, Input, NgZone, OnChanges, OnInit, 
 import { Flight } from '../flight';
 
 @Component({
-  selector: 'flight-card',
+  selector: 'app-flight-card',
   templateUrl: './flight-card.component.html',
   styleUrls: ['./flight-card.component.scss']
 })
 export class FlightCardComponent implements OnInit, OnChanges {
-  @Input() item: Flight | null = null;
+  @Input({ required: true }) item!: Flight;
   @Input() selected = false;
   @Output() selectedChange = new EventEmitter<boolean>();
 
